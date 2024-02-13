@@ -9,7 +9,6 @@ public class Main {
         System.out.println(foundPerson.getName());
 
         Person clonedPerson = list.clone(foundPerson);
-
         System.out.println(clonedPerson.getName());
         list.personToString(clonedPerson);
     }

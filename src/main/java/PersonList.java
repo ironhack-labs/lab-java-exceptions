@@ -20,23 +20,20 @@ public class PersonList {
         personList.add(person);
     }
 
-    public Person findByName(String name) throws IllegalArgumentException{
+    public Person findByName(String name) throws IllegalArgumentException {
         String nameRegex = "^[a-zA-Z]+,\\s[a-zA-Z]+$";
         Person found = null;
-        if(!Pattern.matches(nameRegex, name)) {
-            throw new IllegalArgumentException("Not valid format");
-        }else{
-            for(Person person : personList){
+        if(!Pattern.matches(nameRegex, name))  throw new IllegalArgumentException("Not valid format");
+        for(Person person : personList){
                 if(person.getName().equals(name)){
                     found = person;
                 }
-            }
         }
         return found;
     }
 
     public Person clone(Person person){
-        int id = personList.size() + 1;
+        int id = personList.size() + 3;
         return new Person(id, person.getName(), person.getAge(), person.getOccupation());
     }
 
