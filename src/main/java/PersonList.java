@@ -25,9 +25,11 @@ public class PersonList {
     }
 
     public void writePersonToFile(Person person, String filepath){
-        try (FileWriter writer = new FileWriter(filepath){
+        try {
+            FileWriter writer = new FileWriter(filepath);
             writer.write(person.toString());
-        } catch (IOException e){
+            writer.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
