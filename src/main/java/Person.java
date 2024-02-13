@@ -13,6 +13,19 @@ public class Person {
     private int age;
     private String occupation;
 
+
+    public void setName(String name) {
+        if (isValidName(name)) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Name not valid");
+        }
+    }
+
+    public boolean isValidName(String name) {
+        return !(name.split(" ").length != 2);
+    }
+
     public void setAge(int age) {
         if (age < 0) {
             throw new IllegalArgumentException("Age can't be negative");
