@@ -11,10 +11,11 @@ public class PersonList {
     }
 
     public void addPerson(Person person) {
-       personList.add(person);
+        personList.add(person);
     }
-    public Person findByName( String name) throws IllegalArgumentException{
-        if (!name.matches("[a-zA-Z]+\\s[a-zA-Z]+")){
+
+    public Person findByName(String name) throws IllegalArgumentException {
+        if (!name.matches("[a-zA-Z]+\\s[a-zA-Z]+")) {
             throw new IllegalArgumentException("Invalid name format. Use Firstname Lastname");
         }
         for (Person person : personList) {
@@ -25,19 +26,15 @@ public class PersonList {
         throw new IllegalArgumentException("Person not found");
     }
 
-    public Person clonePerson(Person originalperson, int newId){
+    public Person clonePerson(Person originalperson, int newId) {
         return new Person(newId, originalperson.getName(), originalperson.getAge(), originalperson.getOccupation());
     }
 
-    public void writePersonToFile(Person person, String filepath){
-        try {
-            FileWriter writer = new FileWriter(filepath);
-            writer.write(person.toString());
+    public void writePersonToFile(Person person, String filepath) {
+        try (FileWriter fileWriter = new FileWriter(filepath)) {
+            fileWriter.write(person.toString());
         } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            System.out.println("File written successfully");
+            System.err.println("Error al escribir en el archivo: " + e.getMessage());
         }
     }
-
 }
