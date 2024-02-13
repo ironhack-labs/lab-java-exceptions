@@ -21,7 +21,7 @@ public class PersonList {
     }
 
     public Person findByName(String name) throws IllegalArgumentException {
-        String nameRegex = "^[a-zA-Z]+,\\s[a-zA-Z]+$";
+        String nameRegex = "^[a-zA-Z]+\s[a-zA-Z]+$";
         Person found = null;
         if(!Pattern.matches(nameRegex, name))  throw new IllegalArgumentException("Not valid format");
         for(Person person : personList){

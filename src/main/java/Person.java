@@ -12,6 +12,12 @@ public class Person {
     private String occupation;
 
 
+    public Person(Integer id, String firstName, String lastName, Integer age, String occupation){
+        setName(firstName + " " + lastName);
+        setAge(age);
+        setId(id);
+        setOccupation(occupation);
+    }
     public void setAge(Integer age){
         if(age < 0 ) throw new IllegalArgumentException("Age cannot be negative");
         this.age = age;

@@ -13,7 +13,7 @@ class PersonListTest {
 
     @BeforeEach
     void setUp() {
-        dummyPerson = new Person(2, "Arian, Collaso", 32, "It");
+        dummyPerson = new Person(2, "Arian Collaso", 32, "It");
         listPerson.addPerson(dummyPerson);
     }
 
@@ -25,7 +25,7 @@ class PersonListTest {
 
     @Test
     void returnExceptionOnFindByName(){
-        assertThrows(IllegalArgumentException.class, () -> listPerson.findByName("Arcoro Coar"));
+        assertThrows(IllegalArgumentException.class, () -> listPerson.findByName("ArcoroCoar"));
     }
 
     @Test
