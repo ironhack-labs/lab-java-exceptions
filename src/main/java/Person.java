@@ -1,6 +1,3 @@
-import org.testng.annotations.Test;
-
-import static org.junit.Assert.*;
 
 public class Person {
     private int id;
