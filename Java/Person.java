@@ -6,11 +6,14 @@ public class Person {
     int age;
     String occupation;
 
+    private static int instanceCount = 0;
+
     public Person(int id, String name, int age, String occupation) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.occupation = occupation;
+        instanceCount++;
     }
 
     public int getId() {
@@ -49,6 +52,14 @@ public class Person {
 
     public void setOccupation(String occupation) {
         this.occupation = occupation;
+    }
+
+    public static int getInstanceCount() {
+        return instanceCount;
+    }
+
+    private static void setInstanceCount(int instanceCount) {
+        Person.instanceCount = instanceCount;
     }
 
     @Override

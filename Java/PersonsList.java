@@ -40,8 +40,8 @@ public class PersonsList {
     }
 
     public Person clone(Person person){
-
-        return new Person(person.getId(), person.getName(), person.getAge(), person.getOccupation());
+        int newId = Person.getInstanceCount()+1;
+        return new Person(newId, person.getName(), person.getAge(), person.getOccupation());
     }
 
     public void docWriter(Person person, String fileName) {

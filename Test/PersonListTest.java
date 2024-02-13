@@ -26,13 +26,16 @@ public class PersonListTest {
     }
 
     @Test
-    void testClonePerson(){
+    void testClonePersonDifferentId(){
         PersonsList personsList = new PersonsList();
         Person person = new Person(1, "Diego Martins", 34, "DeveloperInProgress");
         personsList.addPerson(person);
         personsList.addPerson(personsList.clone(person));
 
-        assertTrue(personsList.getPersonList().get(0).equals(personsList.getPersonList().get(1)));
+        int idPerson1 = (personsList.getPersonList().get(0).getId());
+        int idPerson2 =(personsList.getPersonList().get(1).getId());
+
+        assertFalse(idPerson1==idPerson2);
 
     }
 
