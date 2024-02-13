@@ -29,4 +29,14 @@ public class Person {
         Person person = (Person) obj;
         return person.getOccupation().equals(this.occupation) && person.getAge().equals(this.age) && person.getName().equals(this.name);
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", occupation='" + occupation + '\'' +
+                '}';
+    }
 }

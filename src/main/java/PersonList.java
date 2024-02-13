@@ -43,14 +43,15 @@ public class PersonList {
     public void personToString(Person person) throws IOException {
         File file = new File("profilePerson/profile.txt");
         FileWriter writer = new FileWriter(file, false);
+        String string = person.toString();
         try {
-            writer.write("Id: " + " " + person.getId()
-                    + "\n" + "Name: " + " " + person.getName()
-                    + "\n" + "Age : " + " " + person.getAge()
-                    + "\n" + "Occupation : " + " " + person.getOccupation());
+            writer.write(string);
             writer.close();
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
     }
+
+
+    //TODO: Reimplement login using person.toString().
 }
