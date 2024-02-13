@@ -51,8 +51,8 @@ public class Person {
         return this.name.equals(otherperson.name) && this.age == otherperson.age && this.occupation.equals(otherperson.occupation);
     }
 
-    public void printPerson(Person person){
-        System.out.println(person.toString());
+    public void printPerson(){
+        System.out.println(this);
     }
     @Override
     public String toString() {

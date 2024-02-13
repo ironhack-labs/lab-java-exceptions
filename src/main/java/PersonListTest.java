@@ -1,7 +1,7 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class PersonsListTest {
+public class PersonListTest {
 
     @Test
     public void testFindByName() {
@@ -38,5 +38,7 @@ public class PersonsListTest {
         // Test if the id of the cloned person is different from the original
         assertNotEquals(originalPerson.getId(), clonedPerson.getId());
     }
+
+
 }
 
