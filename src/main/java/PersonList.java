@@ -1,13 +1,18 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PersonList {
-    private Person[] personList;
+    private List<Person> personList;
 
-    public PersonList(Person[] personList) {
-        this.personList = personList;
+    public PersonList() {
+        this.personList = new ArrayList<>();
     }
 
+    public void addPerson(Person person) {
+       personList.add(person);
+    }
     public Person findByName( String name) throws IllegalArgumentException{
         if (!name.matches("[a-zA-Z]+\\s[a-zA-Z]+")){
             throw new IllegalArgumentException("Invalid name format. Use Firstname Lastname");
@@ -28,9 +33,10 @@ public class PersonList {
         try {
             FileWriter writer = new FileWriter(filepath);
             writer.write(person.toString());
-            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            System.out.println("File written successfully");
         }
     }
 
