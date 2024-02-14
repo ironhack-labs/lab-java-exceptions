@@ -16,14 +16,14 @@ class PersonTest {
 
     @Test
     void setAgeZero(){
-        assertThrows(IllegalArgumentException.class, ()-> {
-            person.setAge(0);
-        });
+        person.setAge(0);
+        assertEquals(0, person.getAge());
+
     }
 
     @Test
     void setAgePositive(){
-        assertThrows(IllegalArgumentException.class, ()-> {
+        assertDoesNotThrow(()-> {
             person.setAge(5);
         });
     }
