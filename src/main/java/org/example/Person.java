@@ -76,5 +76,10 @@ public class Person {
                 && this.getOccupation().equals(person.getOccupation());
 
     }
+
+    @Override
+    public String toString(){
+        return "{"+this.getId() + ", " + this.getName() + ", " + this.getAge() + ", " + this.getOccupation() +"}";
+    }
 }
 

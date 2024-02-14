@@ -39,20 +39,28 @@ public class PersonList {
         return new Person(person.getId()+1, person.getName(), person.getAge(), person.getOccupation());
     }
 
-    public void toString(Person person){
-        String strPerson = "{"+person.getId() + ", " + person.getName() + ", " + person.getAge() + ", " + person.getOccupation() +"}";
+    public void writePersonToFile(Person person, String path) throws FileNotFoundException{
+        String strPerson = person.toString();
         try {
-            FileWriter writer = new FileWriter("person.txt");
+            FileWriter writer = new FileWriter(path);
             writer.write(strPerson);
             writer.close();
-        } catch (FileNotFoundException e) {
-            System.err.println("File not found: " + e.getMessage());
-            // Handle the exception (e.g., create the file, prompt the user, etc.)
-        } catch (SecurityException e) {
+        }
+
+
+         catch (SecurityException e) {
             System.err.println("Security exception: " + e.getMessage());
-            // Handle the exception (e.g., check permissions, prompt the user, etc.)
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+
+        }
+        //catch (IOException e) {
+            //throw new RuntimeException(e);
+        //}
+        catch (IOException e) {
+            if (e instanceof FileNotFoundException) {
+                throw (FileNotFoundException) e;
+            } else {
+                throw new RuntimeException(e);
+            }
         }
 
     }
