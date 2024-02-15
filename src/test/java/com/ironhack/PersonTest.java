@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PersonTest {
@@ -18,7 +19,8 @@ public class PersonTest {
     @Test
     @DisplayName("Throw error if age is less than zero")
     public void setAge_throwsExceptionWhenNegative() {
-        assertThrows(IllegalArgumentException.class, () -> person1.setAge(-2));
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> person1.setAge(-2));
+        assertEquals("Age must be greater than zero", exception.getMessage());
     }
 
 
