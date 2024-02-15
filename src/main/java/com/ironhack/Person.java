@@ -13,8 +13,6 @@ public class Person {
         setOccupation(occupation);
     }
 
-
-
     public int getId() {
         return id;
     }
@@ -35,7 +33,7 @@ public class Person {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(int age) throws IllegalArgumentException {
         if (age < 0) {
             throw new IllegalArgumentException("Age must be greater than zero");
         }

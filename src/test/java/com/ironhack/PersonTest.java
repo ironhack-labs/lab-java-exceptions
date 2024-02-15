@@ -7,16 +7,19 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PersonTest {
-    private Person person;
+    private Person person1;
+    private Person person2;
     @BeforeEach
     void setUp() {
-        person = new Person(234566, "Ada Lovelace", 40, "mathematician ");
+        person1 = new Person(234566, "Ada Lovelace", 40, "mathematician ");
+        person2 = new Person(223344, "Hedy Lamarr", 34, "inventor");
     };
 
-//Test the setAge method to ensure that it throws an error if the age is less than 0.
     @Test
     @DisplayName("Throw error if age is less than zero")
     public void setAge_throwsExceptionWhenNegative() {
-        assertThrows(IllegalArgumentException.class, () -> person.setAge(-2));
+        assertThrows(IllegalArgumentException.class, () -> person1.setAge(-2));
     }
+
+
 }
