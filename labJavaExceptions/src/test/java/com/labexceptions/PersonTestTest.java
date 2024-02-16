@@ -19,5 +19,6 @@ class PersonTestTest {
     @Test
     void negative_age(){
         Person person = new Person(1, "John Doe", 6, "Engineer");
+        assertThrows(IllegalArgumentException.class, () -> person.setAge(-1));
     }
 }
