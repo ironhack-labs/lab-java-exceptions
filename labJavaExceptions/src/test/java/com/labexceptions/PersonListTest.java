@@ -23,7 +23,7 @@ public class PersonListTest {
     void findByNameTest(){
         Person findByName = PersonsList.findByName("Paco Perez");
         System.out.println("Found person - Name: " + findByName.getName() + ", Age: " + findByName.getAge() + ", Occupation: " + findByName.getOccupation());
-
+        assertThrows(IllegalArgumentException.class, () -> PersonsList.findByName("InvalidName"));
     }
 
     @Test
