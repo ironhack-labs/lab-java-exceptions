@@ -47,4 +47,11 @@ public class Person {
     public void setOccupation(String occupation) {
         this.occupation = occupation;
     }
+
+    public boolean equals(Person comparedPerson) {
+        if (this.name.equals(comparedPerson.name) && this.age == comparedPerson.age && this.occupation.equals(comparedPerson.occupation)) {
+            return true;
+        }
+        return false;
+    }
 }
