@@ -31,6 +31,10 @@ public class PersonListTest {
         Person person4 = new Person(8, "Jaime Pleno", 63, "almost retired");
         Person clone = PersonsList.clone(person4);
         System.out.println("Clone ID number is: " + clone.getId() + " Name is: " + clone.getName() + " Age is: " +  clone.getAge() + " And works as a: " + clone.getOccupation());
+        assertNotEquals(person4.getId(), clone.getId());
+        assertEquals(person4.getName(), clone.getName());
+        assertEquals(person4.getAge(), clone.getAge());
+        assertEquals(person4.getOccupation(), clone.getOccupation());
     }
 
 
