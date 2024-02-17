@@ -21,8 +21,7 @@ public class PersonList {
         if (separateName.length != 2){
                 throw new IllegalArgumentException("Name doesn't have correct format." +
                         " Correct format: \"firstName lastName\"");
-        }
-        else {
+        } else {
             for (Person person: listPerson){
                 if (name.equals(person.getName())){
                     return person;
@@ -49,7 +48,7 @@ public class PersonList {
             writer.write(person.toString());
             writer.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.err.println("There is an error writing to file." + e.getMessage());
         }
     }
 

@@ -47,6 +47,10 @@ public class Person {
     }
 
     public void setName(String name) {
+        if(name == null || !name.contains(" ")) {
+            throw new IllegalArgumentException("Name doesn't have correct format." +
+            " Correct format: \"firstName lastName\"");
+        }
         this.name = name;
     }
 

@@ -2,12 +2,14 @@ package org.lab204;
 
 import org.junit.Test;
 
+import java.io.IOException;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
 public class PersonTest {
 
-    private Person person = new Person(2, "Julia", 34, "developer");
+    private Person person = new Person(2, "Julia Olle", 34, "developer");
     PersonList personList = new PersonList();
 
     //Test to set age when it is less than 0.
@@ -40,6 +42,7 @@ public class PersonTest {
         assertEquals(person.getAge(), person2.getAge());
         assertEquals(person.getOccupation(), person2.getOccupation());
     }
+
 }
 
 

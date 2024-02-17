@@ -12,15 +12,22 @@ public class Main {
         personList.getListPerson().add(person1);
         personList.getListPerson().add(person2);
 
-        //check toString method
+        //check toString method: print a String with information of person
         for (Person person : personList.getListPerson()){
             System.out.println(person.toString());
         }
 
-        //check findByName method
-        Person personFinded = personList.findByName("Julia Olle");
-        System.out.println("person finded: " + personFinded.toString());
-        Person personFinded3 = personList.findByName("Julia Roset");
+        //check findByName method: find a person who has the name entered as a parameter
+        try {
+            Person personFound = personList.findByName("Julia Olle");
+            if (personFound != null){
+                System.out.println("Person found: " + personFound.toString());
+            } else{
+                System.out.println("Person not found.");
+            }
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
 
         //check clone method
         Person person3 = personList.clone(person1);
@@ -28,7 +35,6 @@ public class Main {
 
         //check equals method
         System.out.println("Equals: " + person1.equals(person3));
-        System.out.println("Equals: " + person1.equals(person2));
 
         //check write the Person information to a file
         personList.toStringFile(person1);
