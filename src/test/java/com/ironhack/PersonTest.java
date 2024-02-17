@@ -8,12 +8,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PersonTest {
     private Person person1;
-    private Person person2;
     @BeforeEach
     void setUp() {
-        person1 = new Person(234566, "Ada Lovelace", 40, "mathematician");
-        person2 = new Person(223344, "Hedy Lamarr", 34, "inventor");
-    };
+        person1 = new Person("Ada Lovelace", 40, "mathematician");
+    }
 
     @Test
     @DisplayName("Throw error if age is less than zero")
@@ -25,13 +23,13 @@ public class PersonTest {
     @Test
     @DisplayName("Two similar Persons are equal")
     public void equals_testSimilarPersons() {
-        assertTrue(person1.equals(new Person(232266, "Ada Lovelace", 40, "mathematician")));
+        assertTrue(person1.equals(new Person("Ada Lovelace", 40, "mathematician")));
     }
     @Test
     @DisplayName("Two non similar Persons are different")
     public void equals_testNonSimilarPersons() {
-        assertFalse(person1.equals(new Person(232266, "Brandon Sanderson", 40, "mathematician")));
-        assertFalse(person1.equals(new Person(232266, "Ada Lovelace", 32, "mathematician")));
-        assertFalse(person1.equals(new Person(232266, "Ada Lovelace", 40, "translator")));
+        assertFalse(person1.equals(new Person("Brandon Sanderson", 40, "mathematician")));
+        assertFalse(person1.equals(new Person("Ada Lovelace", 32, "mathematician")));
+        assertFalse(person1.equals(new Person("Ada Lovelace", 40, "translator")));
     }
 }

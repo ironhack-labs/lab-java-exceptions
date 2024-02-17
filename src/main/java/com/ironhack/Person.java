@@ -1,13 +1,14 @@
 package com.ironhack;
 
 public class Person {
+    private static int count = 0;
     private int id;
     private String name;
     private int age;
     private String occupation;
 
-    public Person(int id, String name, int age, String occupation) {
-        setId(id);
+    public Person(String name, int age, String occupation) {
+        setId(count++);
         setName(name);
         setAge(age);
         setOccupation(occupation);

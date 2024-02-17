@@ -12,8 +12,8 @@ public class PersonsListTest {
 
     @BeforeEach
     void setUp() {
-        person1 = new Person(234566, "Ada Lovelace", 40, "mathematician");
-        Person person2 = new Person(223344, "Hedy Lamarr", 34, "inventor");
+        person1 = new Person("Ada Lovelace", 40, "mathematician");
+        Person person2 = new Person("Hedy Lamarr", 34, "inventor");
         list = new PersonsList();
         list.add(person1);
         list.add(person2);

@@ -31,7 +31,7 @@ public class PersonsList {
     }
 
     public Person clone(Person person) {
-        return new Person(person.getId() + 1, person.getName(), person.getAge(), person.getOccupation());
+        return new Person(person.getName(), person.getAge(), person.getOccupation());
     }
 
     public void writePersonInfo(Person person) throws IllegalArgumentException {
