@@ -1,4 +1,5 @@
 package com.ironhack;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,17 +24,19 @@ public class PersonsList {
         }
         return null;
     }
+
     public Person clone(Person person) {
         return new Person(person.getId() + 1, person.getName(), person.getAge(), person.getOccupation());
     }
 
     public void writePersonInfo(Person person) throws IOException {
+        FileWriter writer = new FileWriter("demo.txt", true);
         try {
-            FileWriter writer = new FileWriter("demo.txt", true);
             writer.write(person.toString());
-            writer.close();
         } catch (IOException e) {
             System.err.println("Error: " + e);
+        } finally {
+            writer.close();
         }
     }
 }
