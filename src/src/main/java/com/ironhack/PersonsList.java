@@ -8,7 +8,7 @@ public class PersonsList {
     private List<Person> persons;
 
     public PersonsList(List<Person> persons) {
-        this.persons = new ArrayList<>();
+        this.persons = new ArrayList<>(persons);
     }
 
     public Person findByName(String name) {

@@ -1,12 +1,12 @@
 package com.ironhack;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PersonTest {
     private Person person;
 
-    @Before
+    @BeforeEach
     public void createData() {
         person = new Person(1, "Jane Doe", 18, "Developer");
     }

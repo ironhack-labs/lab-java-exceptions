@@ -1,5 +1,5 @@
 package com.ironhack;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ public class PersonsListTest {
     Person person2;
     Person person3;
 
-    @Before
+    @BeforeEach
     public void createData() {
         person1 = new Person(1, "Jane Doe", 18, "Developer");
         person2 = new Person(2, "James Doe", 30, "Product Owner");
@@ -38,6 +38,9 @@ public class PersonsListTest {
 
     @Test
     public void clone_Positive() {
-        assertTrue(person1.equals(personsList.clone(person1)));
-    }
+        Person clonedPerson = personsList.clone(person1);
+        assertEquals(person1.getName(), clonedPerson.getName());
+        assertEquals(person1.getAge(), clonedPerson.getAge());
+        assertEquals(person1.getOccupation(), clonedPerson.getOccupation());
+        assertNotEquals(person1.getId(), clonedPerson.getId());    }
 }

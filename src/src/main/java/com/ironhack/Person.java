@@ -56,4 +56,9 @@ public class Person {
                 otherPerson.getAge() == thisPerson.getAge() &&
                 otherPerson.getOccupation().equals(thisPerson.getOccupation());
     }
+
+    @Override
+    public String toString() {
+        return "Person{id=" + id + ", name='" + name + "\'" + ", age=" + age + ", occupation='" + occupation + "\' + '}";
+    }
 }
