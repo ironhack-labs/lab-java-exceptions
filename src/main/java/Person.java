@@ -33,4 +33,7 @@ public class Person {
         return isEqual;
     }
 
+    public String toString(){
+        return String.valueOf(id)+" "+name+" "+String.valueOf(age)+" "+occupation;
+    }
 }
