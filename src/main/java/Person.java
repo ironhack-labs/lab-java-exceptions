@@ -69,8 +69,8 @@ public class Person {
                 && Objects.equals(occupation, person.occupation);
     }
 
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(name, age, occupation);
-//    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, occupation);
+    }
 }
