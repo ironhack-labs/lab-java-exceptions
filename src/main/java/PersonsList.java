@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
@@ -43,14 +44,19 @@ public class PersonsList {
     public void writePersonInfo (Person person) throws IOException {
         try {
             File file = new File("Info about " + person.getName() + ".txt");
+            String message = " Id: "+person.getId() + "\n Name: " +person.getName() + "\n Age: " + person.getAge() + "\n Occupation: " + person.getOccupation();
 
-            if (file.exists()) {
-                file.delete();
+            if (!file.exists()) {
+                file.createNewFile();
+                System.out.println("Creating new file about " + person.getName());
+                message = "**Original info at " + new Date() + "** \n" + message;
+            } else {
                 System.out.println("Updating current existing file about " + person.getName());
+                message = "\r\n\n**Updated info at " + new Date() + "** \n" + message;
             }
-            FileWriter writer = new FileWriter("Info about " + person.getName() + ".txt",false);
-            writer.write("Id: "+person.getId() + "\nName: " +person.getName() + "\nAge: " + person.getAge() + "\nOccupation: " + person.getOccupation());
 
+            FileWriter writer = new FileWriter("Info about " + person.getName() + ".txt",true);
+            writer.write(message);
             writer.close();
         } catch (IOException e) {
             System.out.println("There was an error when creating the file: " + e.getMessage());

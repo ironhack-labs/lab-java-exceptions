@@ -33,11 +33,11 @@ class PersonTest {
         System.setOut(new PrintStream(outContent));
     }
 
-    @AfterEach
-    void cleanFiles() {
-        File folder = new File("\\target");
-        File fList[] = folder.listFiles();
-    }
+//    @AfterEach
+//    void cleanFiles() {
+//        File folder = new File("\\target");
+//        File fList[] = folder.listFiles();
+//    }
 
     @DisplayName("Setting incorrect name format")
     @Test
