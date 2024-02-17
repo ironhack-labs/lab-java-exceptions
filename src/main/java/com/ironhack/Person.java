@@ -49,9 +49,9 @@ public class Person {
     }
 
     public boolean equals(Person comparedPerson) {
-        if (this.name.equals(comparedPerson.name) && this.age == comparedPerson.age && this.occupation.equals(comparedPerson.occupation)) {
-            return true;
-        }
-        return false;
+        return this.name.equals(comparedPerson.name) && this.age == comparedPerson.age && this.occupation.equals(comparedPerson.occupation);
+    }
+    public String toString() {
+        return String.format("Name: %s\nId: %d\nAge: %d years old\nOccupation: %s\n", getName(), getId(), getAge(), getOccupation());
     }
 }
