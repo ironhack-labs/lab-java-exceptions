@@ -38,8 +38,7 @@ public class PersonsList {
     public void personToFile(Person person){
         try{
             FileWriter writer = new FileWriter("person.txt");
-            writer.write(person.toString());
-            //writer.write("ID: "+person.getId()+" name: "+person.getName()+" age: "+person.getAge()+" occupation: "+person.getOccupation());
+            writer.write(person.toString()+" ID: "+person.getId()+" name: "+person.getName()+" age: "+person.getAge()+" occupation: "+person.getOccupation());
             writer.close();
         }catch (IOException e) {
             System.out.println("Hey that file doesn't exist!");
