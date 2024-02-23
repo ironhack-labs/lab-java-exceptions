@@ -1,8 +1,11 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PersonList {
 
+    FileWriter writer;
     List<Person> people = new ArrayList<>();
 
     public Person findByName(String name) {
@@ -23,9 +26,14 @@ public class PersonList {
                 personToClone.getOccupation());
     }
 
-    public void printPerson(Person person) {
-        System.out.println(person);
+    public void saveToFile(Person person) {
+        try {
+            writer = new FileWriter("people.txt", true);
+            writer.write(person.toString());
+            writer.close();
+        } catch (IOException io_e) {
+            System.out.println(io_e.getMessage());
+        }
     }
-
 
 }

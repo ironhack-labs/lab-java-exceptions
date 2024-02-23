@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -30,6 +32,7 @@ class PersonTest {
         assertTrue(new Person(2, "firstName2 lastName2", 42, "Computer engineer").equals(
                 personList.findByName("firstName2 lastName2")));
     }
+
     @Test
     @DisplayName("Should throws an exception when the name is not well formatted")
     void findByName_wrong_name_throws() {
@@ -42,7 +45,6 @@ class PersonTest {
         assertThrows(IllegalArgumentException.class, () -> personList.findByName("name1"));
     }
 
-
     @Test
     @DisplayName("Should clone a person with the same properties except by the id")
     void clone_a_person() {
@@ -53,6 +55,16 @@ class PersonTest {
 
         assertTrue(person1.equals(person2));
         assertFalse(person1.getId() == person2.getId());
+    }
+
+    @Test
+    @DisplayName("Should add a person to a people.txt file")
+    void saveToFile() {
+        person1 = new Person(1, "firstName1 lastName1", 41, "Computer engineer");
+        personList = new PersonList();
+        personList.saveToFile(person1);
+
+        assertTrue(new File("people.txt").isFile());
     }
 
 }

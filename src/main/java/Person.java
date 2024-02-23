@@ -28,7 +28,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return String.format("Name: %s, Age: %d, Occupation: %s", name, age, occupation);
+        return String.format("ID: %d, Name: %s, Age: %d, Occupation: %s%n", id, name, age, occupation);
     }
 
     public int getId() {
@@ -48,7 +48,7 @@ public class Person {
     }
 
     public void setAge(int age) {
-        if (!(age >= 0 )) {
+        if (!(age >= 0)) {
             throw new IllegalArgumentException("Age has to be 0 or a positive number");
         }
         this.age = age;
