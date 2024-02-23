@@ -5,7 +5,6 @@ import java.util.List;
 
 public class PersonList {
 
-    FileWriter writer;
     List<Person> people = new ArrayList<>();
 
     public Person findByName(String name) {
@@ -27,10 +26,8 @@ public class PersonList {
     }
 
     public void saveToFile(Person person) {
-        try {
-            writer = new FileWriter("people.txt", true);
+        try (FileWriter writer = new FileWriter("people.txt", true)) {
             writer.write(person.toString());
-            writer.close();
         } catch (IOException io_e) {
             System.out.println(io_e.getMessage());
         }
