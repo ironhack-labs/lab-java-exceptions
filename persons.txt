@@ -1,0 +1,7 @@
+com.labexceptions.Person@4d405ef7ID: 6
+Name: Paco Perez
+Age: 33
+Occupation: doctorcom.labexceptions.Person@2e817b38ID: 3
+Name: Jorge Rotas
+Age: 33
+Occupation: doctor
