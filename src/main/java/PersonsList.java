@@ -37,7 +37,7 @@ public class PersonsList {
             throw new IllegalArgumentException("Person cannot be null");
         }
 
-        try (FileWriter fileWriter = new FileWriter(fileName, true)) { // The 'true' flag is for appending content
+        try (FileWriter fileWriter = new FileWriter(fileName, true)) {
             fileWriter.write(person.toString() + "\n");
         } catch (IOException e) {
             System.err.println("Error writing to file: " + e.getMessage());
