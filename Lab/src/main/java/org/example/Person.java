@@ -1,16 +1,15 @@
 package org.example;
 
-import java.util.List;
 import java.util.Objects;
 
-public class Person {
+public class Person extends Validation {
     private int id;
     private String name;
     private int age;
     private String occupation;
 
     public Person(int id, String name, int age, String occupation) {
-        if (!isValidName(name)) {
+        if (isValidName(name)) {
             throw new IllegalArgumentException("Name must be formatted as 'firstName lastName'");
         }
         if (age < 0) {
@@ -54,22 +53,6 @@ public class Person {
 
     public void setOccupation(String occupation) {
         this.occupation = occupation;
-    }
-    public static boolean isValidName(String fullName) {
-        if (fullName == null || fullName.trim().isEmpty()) {
-            return false;
-        }
-        String[] parts = fullName.trim().split("\\s+");
-        if (parts.length < 2) {
-            return false;
-        }
-        String nameRegex = "^[A-Za-z'-]+$";
-        for (String part : parts) {
-            if (!part.matches(nameRegex)) {
-                return false;
-            }
-        }
-        return true;
     }
 
     @Override

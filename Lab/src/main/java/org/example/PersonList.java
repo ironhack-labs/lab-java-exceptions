@@ -5,13 +5,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonList {
+public class PersonList extends Validation{
     List<Person> people=new ArrayList<>();
     public void addPerson(Person person){
         people.add(person);
     }
     public Person findByName(String name){
-        if (!Person.isValidName(name)) {
+        if (isValidName(name)) {
             throw new IllegalArgumentException("Name must be formatted as 'firstName lastName'");
         }
         for(Person person: people){
