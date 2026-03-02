@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.ironhack.PersonsListTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.114 s <<< FAILURE! -- in com.ironhack.PersonsListTest
+com.ironhack.PersonsListTest.testFindByName_ValidName_ReturnsPerson -- Time elapsed: 0.017 s <<< ERROR!
+java.lang.IllegalArgumentException: Name must formated as 'firstName lastName' 
+	at com.ironhack.PersonsList.findByName(PersonsList.java:21)
+	at com.ironhack.PersonsListTest.testFindByName_ValidName_ReturnsPerson(PersonsListTest.java:14)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
